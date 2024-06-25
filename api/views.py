@@ -1,4 +1,4 @@
-from rest_framework import viewsets, permissions,status
+from rest_framework import viewsets, permissions
 from .serializer import CategoriaSerializer, MarcasSerializer, UsuariosSerializer, Direcciones_envioSerializer, ProductosSerializer, PedidosSerializer, Detalles_pedidoSerializer, Formas_pagoSerializer, Carrito_comprasSerializer, Metodos_pago_adicionalesSerializer, TransaccionesSerializer, ValoracionesSerializer
 
 from .models import Categorias, Marcas, Usuarios, Direcciones_envio, Productos, Pedidos, Detalles_pedido, Formas_pago, Carrito_compras, Metodos_pago_adicionales, Transacciones, Valoraciones
@@ -68,6 +68,7 @@ class TransaccionesViewSet(viewsets.ModelViewSet):
 class ValoracionesViewSet(viewsets.ModelViewSet):
     queryset = Valoraciones.objects.all()
     serializer_class = ValoracionesSerializer
+
 
 class CreatePreferenceView(APIView):
     def post(self, request):
